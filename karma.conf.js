@@ -40,7 +40,7 @@ module.exports = function (config) {
         },
         browserify : {
             debug: true,
-            transform: [['babelify', { presets: ['es2015'] }], 'brfs']
+            transform: [['envify', { TANGRAM_BUILD_ENV: ['es5'] }], ['babelify', { presets: ['@babel/env'] }], 'brfs']
         },
 
         plugins: [
